@@ -164,11 +164,11 @@ namespace ContosoUniversity.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            //if (disposing)
-            //{
+            if (disposing)
+            {
                db.Dispose();
                base.Dispose(disposing);
-            //}
+            }
             //base.Dispose(disposing);
         }
     }
