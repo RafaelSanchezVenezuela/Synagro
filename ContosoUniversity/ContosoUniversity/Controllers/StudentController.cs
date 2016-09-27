@@ -127,13 +127,13 @@ namespace ContosoUniversity.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,LastName,FirstMidName,EnrollmentDate")] Student student)
         {
-            
+            //El scope que creaste aca es intencional? Saque el redirect afuera para que no de error.
             {
                 db.Entry(student).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
             }
-            return View(student);
+
+            return RedirectToAction("Index");
         }
 
         // GET: Student/Delete/5
